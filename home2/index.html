@@ -6,18 +6,19 @@
     <title>朱一首頁</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="dog.png" type="image/png">
 </head>
 <body>
     <!-- 頂部導覽列 -->
     <header class="navbar">
-        <div class="logo">朱一的網站</div>
+        <div class="logo">CHUONE</div>
         <nav>
             <ul class="nav-links">
-                <li><a href="index.html">首頁</a></li>
-                <li><a href="teach.html">關於我</a></li>
-                <li><a href="other.html">聯絡方式</a></li>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="teach.html">TEACH</a></li>
+                <li><a href="others.html">OTHERS</a></li>
+                <li><a href="personalcal.html">PERSONAL</a></li>
             </ul>
-
         </nav>
         <div class="menu-toggle" onclick="toggleMenu()">
             <i class="fas fa-bars"></i>
@@ -26,17 +27,15 @@
 
     <!-- 头部区域：头像 + 备忘录 -->
     <div class="header-section">
-        <img src="wan1.jpg" alt="個人頭像" class="profile-image">
+        <img src="wanyellow.jpg" alt="個人頭像" class="profile-image">
 
         <div class="memo-container">
-            <div class="social-group social-group-orange">
-                <div class="memo-header">
-                    <h3 class="memo-title"><i class="fas fa-sticky-note"></i> NOTE</h3>
-                </div>
-                <div class="memo-box">
-                    <textarea id="memo-content" class="memo-content" placeholder="在這裡輸入你的備忘錄..."></textarea>
-                    <button id="save-memo" class="save-btn"><i class="fas fa-save"></i> 儲存備忘錄</button>
-                </div>
+            <div class="memo-header">
+                <h3 class="memo-title"><i class="fas fa-sticky-note"></i> NOTE</h3>
+            </div>
+            <div class="memo-box">
+                <textarea id="memo-content" class="memo-content" placeholder="在這裡輸入你的備忘錄..."></textarea>
+                <button id="save-memo" class="save-btn"><i class="fas fa-save"></i> 儲存備忘錄</button>
             </div>
         </div>
     </div>
@@ -83,6 +82,18 @@
         </div>
     </div>
 
+    <!-- 新增的日曆區塊 -->
+    <div class="calendar-section">
+      
+            <div class="memo-header">
+                <h3 class="memo-title"><i class="fas fa-calendar-alt"></i> 我的日曆</h3>
+            </div>
+            <div class="calendar-container">
+                <iframe src="https://calendar.google.com/calendar/embed?src=pppchin7%40hlc.edu.tw&ctz=Asia%2FTaipei"></iframe>
+            </div>
+        </div>
+    </div>
+
     <script>
         // 頁面載入時讀取備忘錄
         document.addEventListener('DOMContentLoaded', function () {
@@ -108,6 +119,12 @@
                 localStorage.setItem('userMemo', memoText);
             }, 5000);
         });
+
+        // 導航列切換功能
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
     </script>
 </body>
 </html>

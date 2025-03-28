@@ -1,9 +1,11 @@
 ﻿body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #f7f8fc;
+    color: #5a5a5a;
     margin: 0;
     padding: 20px;
     padding-top: 70px; /* 確保內容不會被導覽列擋住 */
+    box-sizing: border-box;
 }
 
 
@@ -12,14 +14,15 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #333;
-    color: white;
+    background: linear-gradient(90deg, #e8eaf6, #d1c4e9, #bbdefb);
+    color: #6a9fb5;
     padding: 15px 20px;
     position: fixed;
     width: 100%;
     top: 0;
     left: 0;
     z-index: 1000;
+    box-sizing: border-box;
 }
 
     .navbar .logo {
@@ -34,6 +37,7 @@
     gap: 15px; /* 調整間距 */
     margin-left: auto; /* 讓它靠右但不超出 */
     margin-right: 40px; /* 防止太過貼邊 */
+
 }
 
     .nav-links li {
@@ -41,7 +45,7 @@
     }
 
     .nav-links a {
-        color: white;
+        color: #6a9fb5;
         text-decoration: none;
         font-size: 1em;
     }
@@ -51,6 +55,42 @@
     cursor: pointer;
 }
 
+.calendar-container {
+    width: 95%;
+    max-width: 1000px;
+    height: 600px;
+    margin: 0 auto;
+}
+
+iframe {
+    border: none;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.calendar-section {
+    width: 95%;
+    max-width: 1000px;
+    margin: 20px auto;
+}
+
+.calendar-container {
+    width: 100%;
+    height: 600px;
+    margin-top: 10px;
+}
+
+    .calendar-container iframe {
+        border: none;
+        width: 100%;
+        height: 100%;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+
 /* 響應式設計 - 漢堡選單 */
 @media (max-width: 768px) {
     .nav-links {
@@ -59,7 +99,7 @@
         position: absolute;
         top: 60px;
         left: 0;
-        background-color: #333;
+        background-color: #e8eaf6;
         width: 100%;
         text-align: center;
     }
@@ -99,10 +139,15 @@
 }
 
 .memo-box {
-    background-color: white;
+    background: rgba(240, 244, 255, 0.6);
     border-radius: 10px;
-    padding: 5px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(173, 216, 230, 0.5);
+    backdrop-filter: blur(10px);
+    max-width: 800px;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid rgba(200, 220, 255, 0.4);
 }
 
 .memo-header {
@@ -114,14 +159,14 @@
 
 .memo-title {
     font-size: 1.5em;
-    color: #335;
+    color: #5a7db3;
 }
 
 .memo-content {
     width: 80%;
     min-height: 80px;
     padding: 10px;
-    border: 1px solid #ddd;
+    border: 1px solid #5a5a5a;
     border-radius: 5px;
     resize: vertical;
     font-family: Arial, sans-serif;
@@ -129,7 +174,7 @@
 }
 
 .save-btn {
-    background-color: #4CAF50;
+    background: linear-gradient(90deg, #a7c5eb, #829ebd);
     color: white;
     border: none;
     padding: 10px 15px;
@@ -139,7 +184,8 @@
 }
 
     .save-btn:hover {
-        background-color: #45a049;
+        transform: scale(1.05);
+        background: linear-gradient(90deg, #d4a5ff, #b39ddb);
     }
 
 /* 社交链接区域（保持原样） */
@@ -182,40 +228,42 @@
 }
 
 .btn {
-    display: block;
+    background: linear-gradient(90deg, #a7c5eb, #829ebd);
+    color: white;
     padding: 12px 20px;
     font-size: 16px;
     border-radius: 5px;
     text-decoration: none;
-    color: white;
-    width: 220px;
     text-align: center;
     transition: transform 0.2s;
+    display: block;
+    margin-bottom: 10px;
 }
 
     .btn:hover {
         transform: scale(1.05);
+        background: linear-gradient(90deg, #d4a5ff, #b39ddb);
     }
 
 /* 颜色组（保持原样） */
 .social-group-blue {
-    background-color: #D0E3FF;
+    background-color: #E3F2FD;
 }
 
 .social-group-green {
-    background-color: #D4EDDA;
+    background-color: #E8F5E9;
 }
 
 .social-group-gray {
-    background-color: #E9ECEF;
+    background-color: #F5F5F5;
 }
 
 .social-group-purple {
-    background-color: #E8DAEF;
+    background-color: #F3E5F5;
 }
 
 .social-group-orange {
-    background-color: #FFE8D6;
+    background-color: #E8F5E9;
 }
 
 .social-group-blue .btn {
@@ -235,7 +283,7 @@
 }
 
 .social-group-orange .btn {
-    background-color: #FF9F1C;
+    background-color: #E3F2FD;
 }
 
 /* 响应式设计 */
