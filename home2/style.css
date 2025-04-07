@@ -9,6 +9,7 @@
 }
 
 
+
 /* 導覽列樣式 */
 .navbar {
     display: flex;
@@ -49,6 +50,39 @@
         text-decoration: none;
         font-size: 1em;
     }
+
+/* 兩欄式排版：備忘錄 + AI助手 */
+.header-flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 20px;
+    gap: 20px;
+}
+
+.profile-column {
+    flex: 0 0 150px;
+}
+
+.memo-column, .ai-column {
+    flex: 1 1 300px;
+    max-width: 450px;
+}
+
+/* 響應式調整：手機上變成垂直排列 */
+@media (max-width: 768px) {
+    .header-flex-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .memo-column, .ai-column {
+        width: 90%;
+    }
+}
+
+
 
 .menu-toggle {
     display: none;
@@ -183,10 +217,71 @@ iframe {
     font-size: 16px;
 }
 
-    .save-btn:hover {
+.save-btn:hover {
         transform: scale(1.05);
         background: linear-gradient(90deg, #d4a5ff, #b39ddb);
     }
+
+.btn-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    margin: 10px 8px;
+    border-radius: 50%;
+    color: white;
+    font-size: 28px;
+    text-decoration: none;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* 主題色：藍色（社群媒體） */
+.social-group-blue .btn-icon {
+    background-color: #007bff;
+}
+
+    .social-group-blue .btn-icon:hover {
+        background-color: #0056b3;
+        transform: scale(1.2);
+    }
+
+/* 主題色：綠色（工具） */
+.social-group-green .btn-icon {
+    background-color: #28a745;
+}
+
+    .social-group-green .btn-icon:hover {
+        background-color: #1e7e34;
+        transform: scale(1.2);
+    }
+
+/* 主題色：灰色（教學） */
+.social-group-gray .btn-icon {
+    background-color: #6c757d;
+}
+
+    .social-group-gray .btn-icon:hover {
+        background-color: #5a6268;
+        transform: scale(1.2);
+    }
+
+/* 主題色：紫色（AI助手） */
+.social-group-purple .btn-icon {
+    background-color: #6f42c1;
+}
+
+    .social-group-purple .btn-icon:hover {
+        background-color: #5936a6;
+        transform: scale(1.2);
+    }
+
+    .btn-icon:hover {
+        background-color: #0056b3;
+        transform: scale(1.2); /* 滑鼠移上去放大 */
+        cursor: pointer;
+    }
+
 
 /* 社交链接区域（保持原样） */
 .social-container {
@@ -222,22 +317,27 @@ iframe {
     }
 
 .btn-group {
-    display: flex;
-    flex-direction: column;
+    display:  inherit;
+    flex-direction: inherit;
     gap: 10px;
 }
 
 .btn {
     background: linear-gradient(90deg, #a7c5eb, #829ebd);
     color: white;
-    padding: 12px 20px;
-    font-size: 16px;
-    border-radius: 5px;
+    padding: 7px 20px;
+    font-size: 20px;
+    border-radius: 80px;
     text-decoration: none;
     text-align: center;
     transition: transform 0.2s;
     display: block;
     margin-bottom: 10px;
+}
+
+.icon-button {
+    width: 32px; /* 調整圖片大小 */
+    height: 32px;
 }
 
     .btn:hover {
