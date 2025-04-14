@@ -1,7 +1,7 @@
 ﻿body {
-    font-family: Arial, sans-serif;
-    background-color: #f7f8fc;
-    color: #5a5a5a;
+    font-family: 'Noto Sans TC', sans-serif;
+    background-color: white;
+    color: #4a4a4a;
     margin: 0;
     padding: 20px;
     padding-top: 70px; /* 確保內容不會被導覽列擋住 */
@@ -15,8 +15,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(90deg, #e8eaf6, #d1c4e9, #bbdefb);
-    color: #6a9fb5;
+    background: #dcd9d4;
+    color: #5e5e5e;
     padding: 15px 20px;
     position: fixed;
     width: 100%;
@@ -38,7 +38,6 @@
     gap: 15px; /* 調整間距 */
     margin-left: auto; /* 讓它靠右但不超出 */
     margin-right: 40px; /* 防止太過貼邊 */
-
 }
 
     .nav-links li {
@@ -46,7 +45,7 @@
     }
 
     .nav-links a {
-        color: #6a9fb5;
+        color: #5e5e5e;
         text-decoration: none;
         font-size: 1em;
     }
@@ -159,29 +158,32 @@ iframe {
 }
 
 .profile-image {
-    width: 200px;
+    width: 300px;
     height: 200px;
-    border-radius: 50%;
+    border-radius: 15%;
     object-fit: cover;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin-top: 20px; /* 向下移動 20px*/
 }
 
 /* 备忘录样式 */
 .memo-container {
     flex-grow: 1; /* 填满剩余空间 */
     min-width: 0; /* 防止内容溢出 */
+
 }
 
 .memo-box {
-    background: rgba(240, 244, 255, 0.6);
+    background: #eae8e3;
     border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 4px 10px rgba(173, 216, 230, 0.5);
+    padding: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* 調低陰影強度 */
     backdrop-filter: blur(10px);
-    max-width: 800px;
-    width: 100%;
+    max-width: 400px;
+    width: 90%;
     box-sizing: border-box;
-    border: 1px solid rgba(200, 220, 255, 0.4);
+    border: 1px solid #d4d2cd; /* 改為柔和灰邊框 */
+    margin-top: -20px; /* 向下移動 20px，可依需求調整 */
 }
 
 .memo-header {
@@ -193,7 +195,8 @@ iframe {
 
 .memo-title {
     font-size: 1.5em;
-    color: #5a7db3;
+    color: #4a4a4a;
+    margin-top: -10px; /* 向下移動 20px，可依需求調整 */
 }
 
 .memo-content {
@@ -208,7 +211,7 @@ iframe {
 }
 
 .save-btn {
-    background: linear-gradient(90deg, #a7c5eb, #829ebd);
+    background: #b8b5aa; /* 改為莫蘭迪灰杏色 */
     color: white;
     border: none;
     padding: 10px 15px;
@@ -217,9 +220,9 @@ iframe {
     font-size: 16px;
 }
 
-.save-btn:hover {
+    .save-btn:hover {
         transform: scale(1.05);
-        background: linear-gradient(90deg, #d4a5ff, #b39ddb);
+        background: #a39f94; /* 滑鼠懸停：稍深的莫蘭迪灰 */
     }
 
 .btn-icon {
@@ -234,50 +237,12 @@ iframe {
     font-size: 28px;
     text-decoration: none;
     transition: transform 0.3s ease, background-color 0.3s ease;
+    background-color: #a5a4a2; /* 莫蘭迪灰色 */
 }
 
-/* 主題色：藍色（社群媒體） */
-.social-group-blue .btn-icon {
-    background-color: #007bff;
-}
-
-    .social-group-blue .btn-icon:hover {
-        background-color: #0056b3;
-        transform: scale(1.2);
-    }
-
-/* 主題色：綠色（工具） */
-.social-group-green .btn-icon {
-    background-color: #28a745;
-}
-
-    .social-group-green .btn-icon:hover {
-        background-color: #1e7e34;
-        transform: scale(1.2);
-    }
-
-/* 主題色：灰色（教學） */
-.social-group-gray .btn-icon {
-    background-color: #6c757d;
-}
-
-    .social-group-gray .btn-icon:hover {
-        background-color: #5a6268;
-        transform: scale(1.2);
-    }
-
-/* 主題色：紫色（AI助手） */
-.social-group-purple .btn-icon {
-    background-color: #6f42c1;
-}
-
-    .social-group-purple .btn-icon:hover {
-        background-color: #5936a6;
-        transform: scale(1.2);
-    }
 
     .btn-icon:hover {
-        background-color: #0056b3;
+        background-color: #8e8d89; /* 滑鼠懸停：加深一些 */
         transform: scale(1.2); /* 滑鼠移上去放大 */
         cursor: pointer;
     }
@@ -309,6 +274,7 @@ iframe {
     width: calc(25% - 20px);
     min-width: 250px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border: 1.5px solid #b0a99f; /* 莫蘭迪灰棕邊框，讓區塊更清晰 */
 }
 
     .social-group h3 {
@@ -317,14 +283,21 @@ iframe {
     }
 
 .btn-group {
-    display:  inherit;
+    display: inherit;
+    flex-direction: inherit;
+    gap: 10px;
+    flex-direction: column; /* 垂直排列 */
+}
+
+.btn-group2 {
+    display: inherit;
     flex-direction: inherit;
     gap: 10px;
 }
 
 .btn {
-    background: linear-gradient(90deg, #a7c5eb, #829ebd);
-    color: white;
+    background: linear-gradient(90deg, #c7c3bc, #b0ada4); /* 莫蘭迪淺灰杏到淡卡其漸層 */
+    color: #fff;
     padding: 7px 20px;
     font-size: 20px;
     border-radius: 80px;
@@ -335,56 +308,12 @@ iframe {
     margin-bottom: 10px;
 }
 
-.icon-button {
-    width: 32px; /* 調整圖片大小 */
-    height: 32px;
-}
 
     .btn:hover {
         transform: scale(1.05);
-        background: linear-gradient(90deg, #d4a5ff, #b39ddb);
+        background: linear-gradient(90deg, #a8a49b, #99958c); /* 滑鼠懸停時的漸層，稍微加深 */
     }
 
-/* 颜色组（保持原样） */
-.social-group-blue {
-    background-color: #E3F2FD;
-}
-
-.social-group-green {
-    background-color: #E8F5E9;
-}
-
-.social-group-gray {
-    background-color: #F5F5F5;
-}
-
-.social-group-purple {
-    background-color: #F3E5F5;
-}
-
-.social-group-orange {
-    background-color: #E8F5E9;
-}
-
-.social-group-blue .btn {
-    background-color: #6A8FBF;
-}
-
-.social-group-green .btn {
-    background-color: #77BFA3;
-}
-
-.social-group-gray .btn {
-    background-color: #A0A0A0;
-}
-
-.social-group-purple .btn {
-    background-color: #9B59B6;
-}
-
-.social-group-orange .btn {
-    background-color: #E3F2FD;
-}
 
 /* 响应式设计 */
 @media (max-width: 1200px) {
